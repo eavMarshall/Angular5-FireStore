@@ -1,0 +1,55 @@
+<div id='navcontainer' #navcontainer style='display:flex;position: relative;width:100%;height:100%'>
+  <mat-progress-bar *ngIf='isLoading' mode='indeterminate' style='z-index:999;position:absolute;width:100%;'></mat-progress-bar>
+  <mat-sidenav-container (backdropClick)='closeMenu()' style='z-index:1;position:absolute;width:100%;height:100%'>
+    <mat-sidenav #sidenav class='sideNavShadow' [mode]='page.isMobile ? "over" : "side"' [opened]='sideNav.isOpen' disableClose='true'
+      style='height:100%; overflow:hidden;width:300px; max-width: 100%'>
+      <mat-toolbar color='primary' (click)='page.isMobile ? toggleMenu() : null'>
+        <mat-icon *ngIf='page.isMobile'>arrow_back</mat-icon>
+        <div style='margin-left: auto;margin-right: auto;display: block;'>{{sideNav.title}}</div>
+      </mat-toolbar>
+      <mat-card cdkFocusRegionstart style="margin-bottom:3px; padding-bottom:0px">
+        <img mat-card-image src={{user.photoUrl}} alt="" style='max-width:30%; padding-left:20px;padding-top:20px'>
+        <mat-card-header>
+          <mat-card-title>{{user.displayName}}</mat-card-title>
+          <mat-card-subtitle>{{user.email}}</mat-card-subtitle>
+        </mat-card-header>
+      </mat-card>
+      <mat-list style='height:100%; overflow-y:auto;'>
+        <mat-card style='padding:0px; padding-bottom:10px; padding-top:10px'>
+          <div *ngFor='let menuItem of sideNav.menuList'>
+            <button *ngIf='!menuItem.children' mat-button class='menuItem' (click)='menuItemClickHandler(menuItem.id, menuItem.title)'>
+              {{menuItem.title}}
+            </button>
+            <mat-accordion *ngIf='menuItem.children'>
+              <mat-expansion-panel class='.mat-elevation-z0' [ngClass]='{borderTop:menuItem.open,borderBottom:menuItem.open}' (opened)='menuItem.open=true'
+                (closed)='menuItem.open=false'>
+                <mat-expansion-panel-header expandedHeight='48px'>
+                  <mat-panel-title style='font-size:16px '>{{menuItem.title}}</mat-panel-title>
+                </mat-expansion-panel-header>
+                <button *ngFor='let menuItem of menuItem.children' mat-button class='menuItem' (click)='menuItemClickHandler(menuItem.id, menuItem.title)'>{{menuItem.title}}</button>
+              </mat-expansion-panel>
+            </mat-accordion>
+          </div>
+        </mat-card>
+        <button style="margin-top:20px" mat-button class='menuItem' (click)='logout()'>Logout</button>
+      </mat-list>
+    </mat-sidenav>
+    <div style='height:100%; overflow:hidden'>
+      <mat-toolbar color='primary'>
+        <button mat-icon-button style='margin-right:16px' (click)='toggleMenu()'>
+          <mat-icon>menu</mat-icon>
+        </button>
+        <span class='menuSpacer'>{{toolbar.title}}</span>
+        <div *ngFor='let icon of toolbar.toolbarIcons'>
+          <button mat-icon-button style='margin-right:16px' (click)='iconClick(icon.id)'>
+            <mat-icon>{{icon.iconName}}</mat-icon>
+          </button>
+        </div>
+      </mat-toolbar>
+      <div class='my-content' style='height:100%; overflow-y:auto;'>
+        <mat-spinner *ngIf='isLoading' color='accent' style='margin:0 auto;margin-top:20px'></mat-spinner>
+        <router-outlet ng-show='!isLoading'></router-outlet>
+      </div>
+    </div>
+  </mat-sidenav-container>
+</div>

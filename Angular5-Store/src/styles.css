@@ -1,0 +1,17 @@
+body {
+  margin: 0;
+  padding: 0;
+  height:100vh;
+  font-family: "Roboto", sans-serif;
+}
+
+app-root {
+  display: block;
+  height:100vh;
+}
+
+.mat-expansion-panel-body {
+  padding: 0px 0px 0px 0px !important;
+}
+  
+@import '~material-design-icons/iconfont/material-icons.css';

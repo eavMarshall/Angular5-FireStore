@@ -1,0 +1,10 @@
+*.iml
+/Android-Kotlin-Store/.gradle
+/Android-Kotlin-Store/local.properties
+/Android-Kotlin-Store/.idea/workspace.xml
+/Android-Kotlin-Store/.idea/libraries
+/Android-Kotlin-Store/.DS_Store
+/Android-Kotlin-Store/build
+/Android-Kotlin-Store/captures
+/Android-Kotlin-Store/.externalNativeBuild
+/Angular5-Store/node_modules

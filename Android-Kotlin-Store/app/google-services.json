@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "927390139287",
+    "firebase_url": "https://eavmarshall-github.firebaseio.com",
+    "project_id": "eavmarshall-github",
+    "storage_bucket": "eavmarshall-github.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:927390139287:android:41c61f93fbd4086f",
+        "android_client_info": {
+          "package_name": "android.kotlinstore"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "927390139287-9tmaahcuokvjm1l611mgus6tl3ukgbf1.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "android.kotlinstore",
+            "certificate_hash": "fa4ae989b33755bc71f21eb51da1d0bde76943bf"
+          }
+        },
+        {
+          "client_id": "927390139287-nc0u4v0dmbatof2424426fo0sa6t02am.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDHqczrYS2tdGF_UCJWwSYpuDNvVjyuRww"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "927390139287-nc0u4v0dmbatof2424426fo0sa6t02am.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
